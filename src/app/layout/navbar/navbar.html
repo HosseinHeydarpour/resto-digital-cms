@@ -2,7 +2,10 @@
   <div class="header__content">
     <nav class="navbar flex justify-between h-full w-full">
       <div class="navbar__left flex items-center">
-        <input pInputText type="text" pSize="large" placeholder="جستجو" />
+        <p-floatlabel>
+          <input pInputText id="over_label" autocomplete="off" class="bg-white100" pSize="large" />
+          <label for="over_label">جستجو</label>
+        </p-floatlabel>
       </div>
       <ul class="navbar__right navbar__nav list-none flex mb-0 px-0 h-100 gap-4">
         <li class="navbar__item h-100 flex items-center">
@@ -34,7 +37,7 @@
             </svg>
           </a>
         </li>
-        <li class="navbar__item h-100 flex items-center">
+        <li class="navbar__item h-100 flex items-center relative">
           <a href="#" class="navbar__link primary">
             <svg width="24" height="24" viewBox="0 0 23 22" xmlns="http://www.w3.org/2000/svg">
               <path
@@ -51,6 +54,12 @@
               ></path>
             </svg>
           </a>
+          <p-badge
+            [value]="2"
+            badgeSize="small"
+            severity="danger"
+            class="absolute top-6 -right-2"
+          />
         </li>
         <li class="navbar__item h-100 flex items-center">
           <a href="#" class="navbar__link danger">

@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: '#2f4cdd', // your custom primary color
+        primary: '#2f4cdd',
+        white100: '#fbfbfb',
       },
     },
   },

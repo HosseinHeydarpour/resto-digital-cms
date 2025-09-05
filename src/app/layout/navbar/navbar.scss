@@ -48,6 +48,12 @@
   width: 26px;
   z-index: 999;
 
+  &:hover {
+    span.line {
+      width: 26px;
+    }
+  }
+
   .line {
     background: #2f4cdd;
     display: block;

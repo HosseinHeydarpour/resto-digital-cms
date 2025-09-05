@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabel } from 'primeng/floatlabel';
 
 @Component({
   selector: 'app-navbar',
-  imports: [],
+  imports: [InputTextModule, FloatLabel],
   templateUrl: './navbar.html',
-  styleUrl: './navbar.scss'
+  styleUrl: './navbar.scss',
 })
-export class Navbar {
-
-}
+export class Navbar {}

@@ -5,6 +5,7 @@ import { BadgeModule } from 'primeng/badge';
 import { Tooltip } from 'primeng/tooltip';
 import { CommonModule } from '@angular/common';
 import { ClickOutside } from '../../shared/directives/click-outside';
+import { SidebarService } from '../../core/services/sidebar';
 
 @Component({
   selector: 'app-navbar',
@@ -15,6 +16,9 @@ import { ClickOutside } from '../../shared/directives/click-outside';
 export class Navbar {
   langSwitcherOpen = signal<boolean>(false);
   profileDropdownOpen = signal<boolean>(false);
+
+  // sidebar service
+  sidebarService = inject(SidebarService);
 
   onFullScreenClicked() {
     const elem = document.documentElement;
@@ -58,6 +62,9 @@ export class Navbar {
 
   closeProfileDropDown() {
     if (this.profileDropdownOpen() === true) this.profileDropdownOpen.set(false);
-    console.log('Clicked outside of profile dp');
+  }
+
+  minimizeSidebar() {
+    this.sidebarService.toggleSidebar();
   }
 }

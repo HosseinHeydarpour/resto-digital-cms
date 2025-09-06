@@ -1,13 +1,37 @@
-<aside class="sidebar">
+<aside
+  class="sidebar"
+  [ngClass]="{
+    'w-[22rem]': isSidebarOpen,
+    'w-max': !isSidebarOpen
+  }"
+>
   <div class="sidebar__scroll">
     <!-- Menu List -->
     <ul class="flex flex-col pt-5 list-none">
       @for (item of sidebarItems; track $index) {
       <li class="p-0">
-        <a class="has-arrow ai-icon" aria-expanded="true">
+        <a
+          class="has-arrow ai-icon"
+          aria-expanded="true"
+          [ngClass]="{
+            'px-12': isSidebarOpen,
+            'px-8': !isSidebarOpen
+          }"
+        >
           <div class="flex items-center">
-            <i class="{{ item.icon }} ml-6"></i>
-            <span class="nav-text">{{ item.label }}</span>
+            <i
+              class="{{ item.icon }} "
+              [ngClass]="{
+                'ml-6': isSidebarOpen
+              }"
+            ></i>
+            <span
+              class="nav-text"
+              [ngClass]="{
+                hidden: !isSidebarOpen
+              }"
+              >{{ item.label }}</span
+            >
           </div>
         </a>
       </li>
@@ -15,14 +39,24 @@
     </ul>
 
     <!-- Alert -->
-    <div class="sidebar__add-menu flex flex-col items-center">
+    <div
+      class="sidebar__add-menu flex flex-col items-center"
+      [ngClass]="{
+        hidden: !isSidebarOpen
+      }"
+    >
       <img src="https://davur.dexignzone.com/laravel/demo/images/icon1.png" alt="" />
       <p class="mb-4">شما هنوز منویی تعریف نکرده اید! برای افزودن منو کلیک کنید</p>
       <a class="btn btn-primary btn-block light">+ افزودن منو</a>
     </div>
 
     <!-- Copy right -->
-    <div class="copyright text-center">
+    <div
+      class="copyright text-center"
+      [ngClass]="{
+        hidden: !isSidebarOpen
+      }"
+    >
       <p class="mb-2">© <strong>دیجی رستو - سامانه ساخت منوی دیجیتال </strong></p>
       <p>ساخته شده با <i class="icon-heart"></i> توسط محمد حسین و نگین</p>
     </div>

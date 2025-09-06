@@ -1,6 +1,6 @@
 .sidebar {
   position: fixed;
-  width: 21.563rem;
+
   padding-bottom: 0px;
   height: 100%;
   position: absolute;
@@ -21,7 +21,8 @@
     cursor: pointer;
     a {
       font-size: 19px;
-      padding: 20px 50px;
+      padding-top: 20px;
+      padding-bottom: 20px;
       color: #969ba0;
       transition: all 0.5s;
       position: relative;

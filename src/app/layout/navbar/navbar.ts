@@ -1,13 +1,14 @@
-import { Component, signal } from '@angular/core';
+import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabel } from 'primeng/floatlabel';
 import { BadgeModule } from 'primeng/badge';
 import { Tooltip } from 'primeng/tooltip';
 import { CommonModule } from '@angular/common';
+import { ClickOutside } from '../../shared/directives/click-outside';
 
 @Component({
   selector: 'app-navbar',
-  imports: [InputTextModule, FloatLabel, BadgeModule, Tooltip, CommonModule],
+  imports: [InputTextModule, FloatLabel, BadgeModule, Tooltip, CommonModule, ClickOutside],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
@@ -44,5 +45,9 @@ export class Navbar {
 
   onLangSwitcherClicked() {
     this.langSwitcherOpen.set(!this.langSwitcherOpen());
+  }
+
+  closeLangSwitch() {
+    this.langSwitcherOpen.set(false);
   }
 }

@@ -91,6 +91,8 @@
 
           <ul
             class="bg-white absolute p-2 shadow-lg flex-col transition-all duration-300 w-52 rounded-md"
+            clickOutside
+            (clickOutside)="closeLangSwitch()"
             [ngClass]="{
             'invisible opacity-0 -bottom-[120%]': !langSwitcherOpen(),
             'flex -bottom-[90%] visible opacity-100': langSwitcherOpen(),

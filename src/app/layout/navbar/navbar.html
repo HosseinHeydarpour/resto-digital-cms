@@ -93,18 +93,24 @@
             class="bg-white absolute p-2 shadow-lg flex-col transition-all duration-300 w-52 rounded-md"
             [ngClass]="{
             'invisible opacity-0 -bottom-[120%]': !langSwitcherOpen(),
-            'flex -bottom-full visible opacity-100': langSwitcherOpen(),
+            'flex -bottom-[90%] visible opacity-100': langSwitcherOpen(),
           }"
           >
             <li
-              class="flex items-center gap-2 border-b border-gray-200 border-solid p-2 justify-start"
+              class="flex items-center gap-2 border-b border-gray-200 border-solid p-2 justify-start cursor-pointer hover:bg-primary50 transition-all duration-200 group rounded-md"
             >
               <i class="icon-persian"></i>
-              <span>فارسی</span>
+              <span class="text-primary opacity-70 font-semibold group-hover:opacity-100"
+                >فارسی</span
+              >
             </li>
-            <li class="flex items-center gap-2 p-2 justify-start">
+            <li
+              class="flex items-center gap-2 p-2 rounded-md justify-start cursor-pointer hover:bg-primary50 transition-all duration-200 group"
+            >
               <i class="icon-english"></i>
-              <span>English</span>
+              <span class="text-primary opacity-70 font-semibold group-hover:opacity-100"
+                >English</span
+              >
             </li>
           </ul>
         </li>

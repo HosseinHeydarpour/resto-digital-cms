@@ -202,10 +202,10 @@
 </header>
 
 <div
-  class="nav-header right-0"
+  class="nav-header"
   [ngClass]="{
-    ' px-0 flex justify-center  ': !isSidebarOpen,
-    ' px-12 w-[21.53rem]': isSidebarOpen
+    ' px-0 flex justify-center  right-[12px]': !isSidebarOpen,
+    ' px-12 w-[21.53rem] right-0': isSidebarOpen
   }"
 >
   <a
@@ -240,7 +240,7 @@
     class="nav-control"
     [ngClass]="{
       '-left-16': isSidebarOpen,
-      '-left-24': !isSidebarOpen
+      '-left-20': !isSidebarOpen
     }"
   >
     <div class="hamburger hover:cursor-pointer" (click)="minimizeSidebar()">

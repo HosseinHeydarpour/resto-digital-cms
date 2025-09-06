@@ -1,16 +1,19 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabel } from 'primeng/floatlabel';
 import { BadgeModule } from 'primeng/badge';
 import { Tooltip } from 'primeng/tooltip';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-navbar',
-  imports: [InputTextModule, FloatLabel, BadgeModule, Tooltip],
+  imports: [InputTextModule, FloatLabel, BadgeModule, Tooltip, CommonModule],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
 })
 export class Navbar {
+  langSwitcherOpen = signal<boolean>(false);
+
   onFullScreenClicked() {
     const elem = document.documentElement;
 
@@ -37,5 +40,9 @@ export class Navbar {
         (document as any).msExitFullscreen();
       }
     }
+  }
+
+  onLangSwitcherClicked() {
+    this.langSwitcherOpen.set(!this.langSwitcherOpen());
   }
 }

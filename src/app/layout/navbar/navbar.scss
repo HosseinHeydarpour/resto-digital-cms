@@ -124,8 +124,13 @@
     fill: #2f4cdd;
   }
 
-  &__link.danger [fill] {
-    fill: #ff6d4d;
+  &__link.lang {
+    background: #f4f6fd;
+    padding: 11px;
+  }
+
+  &__link.lang [fill] {
+    color: #2f4cdd;
   }
 
   &__profile,

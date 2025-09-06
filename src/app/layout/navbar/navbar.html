@@ -90,16 +90,16 @@
           </a>
 
           <ul
-            class="bg-white absolute p-2 shadow-lg flex-col transition-all duration-300 w-52 rounded-md"
+            class="bg-white absolute lang-swithcer flex-col transition-all duration-300 w-52 rounded-md"
             clickOutside
             (clickOutside)="closeLangSwitch()"
             [ngClass]="{
-            'invisible opacity-0 -bottom-[120%]': !langSwitcherOpen(),
-            'flex -bottom-[90%] visible opacity-100': langSwitcherOpen(),
+            'invisible opacity-0 top-[120%]': !langSwitcherOpen(),
+            'flex top-full visible opacity-100': langSwitcherOpen(),
           }"
           >
             <li
-              class="flex items-center gap-2 border-b border-gray-200 border-solid p-2 justify-start cursor-pointer hover:bg-primary50 transition-all duration-200 group rounded-md"
+              class="flex items-center gap-2 border-b py-2 px-6 border-gray-200 border-solid p-2 justify-start cursor-pointer hover:bg-primary50 transition-all duration-200 group"
             >
               <i class="icon-persian"></i>
               <span class="text-primary opacity-70 font-semibold group-hover:opacity-100"
@@ -107,7 +107,7 @@
               >
             </li>
             <li
-              class="flex items-center gap-2 p-2 rounded-md justify-start cursor-pointer hover:bg-primary50 transition-all duration-200 group"
+              class="flex items-center gap-2 py-2 px-6 justify-start cursor-pointer hover:bg-primary50 transition-all duration-200 group"
             >
               <i class="icon-english"></i>
               <span class="text-primary opacity-70 font-semibold group-hover:opacity-100"
@@ -116,11 +116,11 @@
             </li>
           </ul>
         </li>
-        <li class="navbar__item h-100 flex items-center">
+        <li class="navbar__item h-100 flex items-center relative">
           <a
             class="navbar__link navbar__profile bg-primary flex items-center"
-            href="#"
             role="button"
+            (click)="onProfileDropdownOpenClicked(); $event.stopPropagation()"
           >
             <div class="navbar__profile--info text-white pl-[20px] text-right">
               <span>رستوران <strong>دنا</strong></span>
@@ -131,6 +131,64 @@
               alt=""
             />
           </a>
+
+          <ul
+            class="profile-dropdown min-w-52 py-4 top-full -right-4 bg-white rounded-lg absolute flex-col transition-all duration-300"
+            clickOutside
+            (clickOutside)="closeProfileDropDown()"
+            [ngClass]="{
+            'invisible opacity-0 top-[120%]': !profileDropdownOpen(),
+            'flex top-full visible opacity-100': profileDropdownOpen(),
+          }"
+          >
+            <li
+              class="py-2 px-6 flex items-center gap-2 text-gray-500 hover:bg-primary50 transition-all duration-300 cursor-pointer"
+            >
+              <span>
+                <svg
+                  id="icon-user1"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-primary"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </span>
+              <span>پروفایل کاربر</span>
+            </li>
+            <li
+              class="py-2 px-6 flex items-center gap-2 text-gray-500 hover:bg-primary50 transition-all duration-300 cursor-pointer"
+            >
+              <span>
+                <svg
+                  id="icon-logout"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="text-danger"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                  <polyline points="16 17 21 12 16 7"></polyline>
+                  <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+              </span>
+              <span>خروج</span>
+            </li>
+          </ul>
         </li>
       </ul>
     </nav>

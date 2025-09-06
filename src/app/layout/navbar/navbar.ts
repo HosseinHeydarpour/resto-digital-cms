@@ -14,6 +14,7 @@ import { ClickOutside } from '../../shared/directives/click-outside';
 })
 export class Navbar {
   langSwitcherOpen = signal<boolean>(false);
+  profileDropdownOpen = signal<boolean>(false);
 
   onFullScreenClicked() {
     const elem = document.documentElement;
@@ -47,7 +48,16 @@ export class Navbar {
     this.langSwitcherOpen.set(!this.langSwitcherOpen());
   }
 
+  onProfileDropdownOpenClicked() {
+    this.profileDropdownOpen.set(!this.profileDropdownOpen());
+  }
+
   closeLangSwitch() {
-    this.langSwitcherOpen.set(false);
+    if (this.langSwitcherOpen()) this.langSwitcherOpen.set(false);
+  }
+
+  closeProfileDropDown() {
+    if (this.profileDropdownOpen() === true) this.profileDropdownOpen.set(false);
+    console.log('Clicked outside of profile dp');
   }
 }

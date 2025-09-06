@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, inject, signal } from '@angular/core';
+import { Component, effect, ElementRef, HostListener, inject, signal } from '@angular/core';
 import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabel } from 'primeng/floatlabel';
 import { BadgeModule } from 'primeng/badge';
@@ -16,9 +16,16 @@ import { SidebarService } from '../../core/services/sidebar';
 export class Navbar {
   langSwitcherOpen = signal<boolean>(false);
   profileDropdownOpen = signal<boolean>(false);
+  isSidebarOpen: boolean = true;
 
   // sidebar service
   sidebarService = inject(SidebarService);
+
+  constructor() {
+    effect(() => {
+      this.isSidebarOpen = this.sidebarService.isSidebarOpenReadonly();
+    });
+  }
 
   onFullScreenClicked() {
     const elem = document.documentElement;

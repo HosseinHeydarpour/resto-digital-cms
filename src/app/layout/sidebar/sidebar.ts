@@ -16,9 +16,7 @@ export class Sidebar {
 
   constructor() {
     effect(() => {
-      this.isSidebarOpen = this.sidebarService.isSidebarMinimizedReadonly();
-      console.log('Sidebar minimized state changed:', this.isSidebarOpen);
-      // Perform any side effect here, e.g., update UI, call a method, etc.
+      this.isSidebarOpen = this.sidebarService.isSidebarOpenReadonly();
     });
   }
 }

@@ -4,10 +4,10 @@ import { Injectable, signal, Signal } from '@angular/core';
   providedIn: 'root',
 })
 export class SidebarService {
-  private isSidebarMinimized = signal<boolean>(true);
-  readonly isSidebarMinimizedReadonly = this.isSidebarMinimized.asReadonly();
+  private isSidebarOpen = signal<boolean>(true);
+  readonly isSidebarOpenReadonly = this.isSidebarOpen.asReadonly();
 
   toggleSidebar() {
-    this.isSidebarMinimized.update((value) => !value);
+    this.isSidebarOpen.update((value) => !value);
   }
 }

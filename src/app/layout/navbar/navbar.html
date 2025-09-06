@@ -1,4 +1,10 @@
-<header class="header">
+<header
+  class="header"
+  [ngClass]="{
+    'pr-24': !isSidebarOpen,
+    'pr-[21.563rem]': isSidebarOpen
+  }"
+>
   <div class="header__content">
     <nav class="navbar flex justify-between h-full w-full">
       <div class="navbar__left flex items-center">
@@ -195,12 +201,48 @@
   </div>
 </header>
 
-<div class="nav-header right-0">
-  <a class="brand-logo">
-    <img class="logo-abbr" src="images/fa-logo.png" alt="DigiResto Logo" />
+<div
+  class="nav-header right-0"
+  [ngClass]="{
+    ' px-0 flex justify-center  ': !isSidebarOpen,
+    ' px-12 w-[21.53rem]': isSidebarOpen
+  }"
+>
+  <a
+    class="brand-logo"
+    [ngClass]="{
+      ' w-16': !isSidebarOpen,
+      ' w-full': isSidebarOpen
+    }"
+  >
+    <img
+      class="logo-abbr"
+      src="images/fa-logo.png"
+      alt="DigiResto Logo"
+      [ngClass]="{
+        'hidden ': !isSidebarOpen,
+        block: isSidebarOpen
+      }"
+    />
+
+    <img
+      class="logo-abbr"
+      src="https://davur.dexignzone.com/laravel/demo/images/logo.png"
+      alt="DigiResto Logo"
+      [ngClass]="{
+        'block w-full': !isSidebarOpen,
+        hidden: isSidebarOpen
+      }"
+    />
   </a>
 
-  <div class="nav-control">
+  <div
+    class="nav-control"
+    [ngClass]="{
+      '-left-16': isSidebarOpen,
+      '-left-24': !isSidebarOpen
+    }"
+  >
     <div class="hamburger hover:cursor-pointer" (click)="minimizeSidebar()">
       <span class="line"></span><span class="line"></span><span class="line"></span>
     </div>

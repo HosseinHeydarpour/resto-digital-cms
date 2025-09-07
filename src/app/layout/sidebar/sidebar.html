@@ -1,7 +1,7 @@
 <aside
-  class="sidebar"
+  class="sidebar hidden md:block"
   [ngClass]="{
-    'w-[22rem]': isSidebarOpen,
+    'xl:w-[22rem] lg:w-[18rem]': isSidebarOpen,
     'w-max': !isSidebarOpen
   }"
 >
@@ -20,7 +20,7 @@
           class="has-arrow ai-icon"
           aria-expanded="true"
           [ngClass]="{
-            'px-12 py-[20px]': isSidebarOpen,
+            'xl:px-12 lg:px-6 py-[20px] ': isSidebarOpen,
             'p-3 hover:bg-primary hover:text-white rounded-md mb-4 group': !isSidebarOpen
           }"
         >
@@ -28,7 +28,7 @@
             <i
               class="{{ item.icon }} "
               [ngClass]="{
-                'ml-6': isSidebarOpen,
+                ' xl:ml-6 lg:ml-4': isSidebarOpen,
                 ' group-hover:text-white': !isSidebarOpen
               }"
             ></i>

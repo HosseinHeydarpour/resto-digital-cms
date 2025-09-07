@@ -7,13 +7,13 @@
 >
   <div class="header__content">
     <nav class="navbar flex justify-between h-full w-full">
-      <div class="navbar__left flex items-center">
+      <div class="navbar__left items-center hidden lg:flex">
         <p-floatlabel>
           <input pInputText id="over_label" autocomplete="off" class="bg-white100" pSize="large" />
           <label for="over_label">جستجو</label>
         </p-floatlabel>
       </div>
-      <ul class="navbar__right navbar__nav list-none flex mb-0 px-0 h-100 gap-4">
+      <ul class="navbar__right navbar__nav list-none flex mb-0 px-0 h-100 gap-4 mr-auto lg:mr-0">
         <li class="navbar__item h-100 flex items-center">
           <a class="navbar__link primary cursor-pointer" (click)="onFullScreenClicked()">
             <svg
@@ -205,33 +205,33 @@
   class="nav-header"
   [ngClass]="{
     ' px-0 flex justify-center  right-[16px]': !isSidebarOpen,
-    ' px-12 w-[21.53rem] right-0': isSidebarOpen
+    ' xl:px-12 lg:px-6 xl:w-[21.53rem] lg:[18rem] right-0': isSidebarOpen
   }"
 >
   <a
     class="brand-logo"
     [ngClass]="{
       ' w-12': !isSidebarOpen,
-      ' w-full': isSidebarOpen
+      ' xl:w-full lg:w-3/4': isSidebarOpen
     }"
   >
     <img
-      class="logo-abbr"
+      class="logo-abbr hidden"
       src="images/fa-logo.png"
       alt="DigiResto Logo"
       [ngClass]="{
-        'hidden ': !isSidebarOpen,
-        block: isSidebarOpen
+        'lg:hidden ': !isSidebarOpen,
+        'hidden lg:block': isSidebarOpen
       }"
     />
 
     <img
-      class="logo-abbr"
+      class="logo-abbr hidden lg:block"
       src="https://davur.dexignzone.com/laravel/demo/images/logo.png"
       alt="DigiResto Logo"
       [ngClass]="{
-        'block w-full': !isSidebarOpen,
-        hidden: isSidebarOpen
+        'hidden lg:block w-full': !isSidebarOpen,
+        'block lg:hidden': isSidebarOpen
       }"
     />
   </a>

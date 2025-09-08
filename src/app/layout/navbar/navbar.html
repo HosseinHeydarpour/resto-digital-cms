@@ -1,8 +1,8 @@
 <header
   class="header"
   [ngClass]="{
-    'pr-24': !isSidebarOpen,
-    'pr-[21.563rem]': isSidebarOpen
+    'lg:pr-24 pr-0': !isSidebarOpen,
+    'lg:pr-[21.563rem] pr-0': isSidebarOpen
   }"
 >
   <div class="header__content">
@@ -124,18 +124,14 @@
         </li>
         <li class="navbar__item h-100 flex items-center relative">
           <a
-            class="navbar__link navbar__profile bg-primary flex items-center"
+            class="navbar__link navbar__profile lg:bg-primary flex items-center"
             role="button"
             (click)="onProfileDropdownOpenClicked(); $event.stopPropagation()"
           >
-            <div class="navbar__profile--info text-white pl-[20px] text-right">
+            <div class="navbar__profile--info text-white pl-[20px] text-right hidden lg:block">
               <span>رستوران <strong>دنا</strong></span>
             </div>
-            <img
-              src="https://davur.dexignzone.com/laravel/demo/images/profile/pic1.jpg"
-              width="20"
-              alt=""
-            />
+            <img src="images/user.webp" width="20" alt="" />
           </a>
 
           <ul
@@ -227,7 +223,7 @@
 
     <img
       class="logo-abbr hidden lg:block"
-      src="https://davur.dexignzone.com/laravel/demo/images/logo.png"
+      src="images/logo-small.webp"
       alt="DigiResto Logo"
       [ngClass]="{
         'hidden lg:block w-full': !isSidebarOpen,
